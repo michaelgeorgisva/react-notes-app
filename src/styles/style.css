@@ -1,0 +1,329 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background 0.25s ease-in;
+}
+
+:root{
+  --font-color: #eee;
+  --background-color: #333;
+}
+
+[data-theme='light']{
+  --font-color: #333;
+  --background-color: #eee;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+
+a:link {
+  color: var(--font-color);
+}
+
+a:visited {
+  color: var(--font-color);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+input,
+textarea {
+  padding: 12px;
+  margin: 12px 0;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  color: var(--font-color);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+  font-weight: bold;
+}
+
+.note-app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 16px;
+  border-bottom: 1px solid #aaa;
+}
+
+.note-app__header a {
+ text-decoration: none;
+  max-width: 100px ;
+  margin: 8px 0;
+  flex: 1;
+  color: var(--font-color);
+}
+
+.note-app__header input {
+  margin:auto;
+  min-width: 450px;
+  height: 15px;
+}
+
+.note-app__body {
+  max-width: 1000px;
+  margin: 16px auto;
+  padding: 12px;
+}
+
+.note-app__body h2 {
+  font-weight: normal;
+  margin: 16px 0;
+}
+
+.note-input {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-bottom: 48px;
+}
+
+.note-input input,
+.note-input textarea {
+  display: block;
+  width: 100%;
+}
+
+.note-input__title {
+  font-weight: bold;
+}
+
+.note-input__title__char-limit {
+  font-size: 14px;
+  text-align: right;
+  color: #aaa;
+}
+
+.note-input__body {
+  min-height: 175px;
+}
+
+.note-input button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  font-family: "Inter", sans-serif;
+  color: var(--font-color);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(min-content, max-content);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.notes-list__empty-message {
+  text-align: center;
+  color: #aaa;
+}
+
+.note-list__loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+.note-item {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-item__content {
+  padding: 12px;
+  flex: 1;
+}
+
+.note-item__title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.note-item__date {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--font-color);
+}
+
+.note-item__body {
+  font-size: 14px;
+}
+
+.note-item__action {
+  display: flex;
+}
+
+.note-item__delete-button,
+.note-item__archive-button {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid #aaa;
+  padding: 8px 0;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.note-item__delete-button {
+  border-right: 1px solid #aaa;
+  color: #ff5f52;
+}
+
+.note-item__archive-button {
+  color: #00ff1a;
+} 
+
+.note-item__archive-button:hover {
+  color: #0ba11f;
+}
+
+.note-item__delete-button:hover {
+  color: #b00020;
+}
+
+.note-detail {
+  margin: 0 auto;
+  width: 90%;
+  height: 500px;
+  padding: 10% 0;
+  /* margin-bottom: 48px; */
+}
+
+.note-detail__title {
+  font-weight: bold;
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.note-detail__date {
+  /* color: var(--on-background-grey); */
+  color: var(--font-color);
+}
+
+.note-detail__body{
+  font-size: 18px;
+  line-height: 2;
+  margin-top: 36px;
+}
+
+.login-page{
+  margin-top: 75px;
+}
+
+.login-page h2, .register-page h2 {
+  font-weight: bold;
+}
+ 
+.login-input, .register-input, .contact-input {
+  margin-top: 16px;
+}
+ 
+.login-input input, .register-input input, .contact-input input {
+  display: block;
+  padding: 16px;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 18px;
+  background-color: transparent;
+  /* border: 2px dashed rgba(255, 255, 255, 0.53); */
+  border: 2px dashed var(--font-color);
+  border-radius: 8px;
+}
+ 
+.login-input button, .register-input button, .contact-input button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+  /* background-color: rgb(255, 255, 255); */
+  background-color: var(--font-color);
+  color: var(--background-color);
+  /* border: 2px dashed black; */
+  border-radius: 10px;
+  margin: 16px 0;
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+}
+ 
+.navigation ul li {
+  display: inline-block;
+  padding: 16px;
+}
+ 
+.navigation ul li a {
+  font-size: 28px;
+}
+ 
+.navigation ul li button {
+  color: var(--font-color);
+  background-color: transparent;
+  font-family: 'Inter', sans-serif;
+  border: 0;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 
+
+
+@media only screen and (min-width: 500px) {
+  .notes-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .note-detail__title{
+    font-size: 64px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .note-search input {
+    min-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .notes-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
